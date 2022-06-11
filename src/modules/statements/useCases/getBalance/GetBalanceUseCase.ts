@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
 import { IUsersRepository } from "../../../users/repositories/IUsersRepository";
-import { Statement } from "../../entities/Statement";
+import { OperationType, Statement } from "../../entities/Statement";
 import { IStatementsRepository } from "../../repositories/IStatementsRepository";
 import { GetBalanceError } from "./GetBalanceError";
 
@@ -13,6 +13,7 @@ interface IResponse {
   statement: Statement[];
   balance: number;
 }
+
 
 @injectable()
 export class GetBalanceUseCase {

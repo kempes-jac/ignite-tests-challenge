@@ -17,13 +17,17 @@ export class StatementsRepository implements IStatementsRepository {
     user_id,
     amount,
     description,
-    type
+    type,
+    sender_id
   }: ICreateStatementDTO): Promise<Statement> {
-    const statement = this.repository.create({
+    const statement = this.repository.create();
+    Object.assign( statement, {
       user_id,
       amount,
       description,
-      type
+      type,
+      sender_id
+
     });
 
     return this.repository.save(statement);

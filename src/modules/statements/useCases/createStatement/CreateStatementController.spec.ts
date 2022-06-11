@@ -65,6 +65,7 @@ describe('Authenticate User - Integration test',()=>{
       });
     
     const statementData = response.body;
+    
     expect(response.status).toEqual(201);
     expect(statementData).toHaveProperty("id");
     expect(statementData).toHaveProperty("user_id");
